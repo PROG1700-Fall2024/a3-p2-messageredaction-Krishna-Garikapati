@@ -9,11 +9,13 @@ def Replace():
     phrase=""
     letter=""
     #i want run the loop and ask for inputs until phrase = quit, the exit loop.
-    while phrase!="quit":
+    while True:
 
         #lets give input values
         phrase=input("Type a phrase (or type quit to exit program):")
-        letter=input("Type a Comma-separated list of letters to redact:").lower()
+        if phrase.lower()=="quit":
+            break
+        letter=input("Type a Comma-separated list of letters to redact:")
 
         #I want values given separated by comma as different values. So using split function.
         letterstoRedact=letter.split(",")
